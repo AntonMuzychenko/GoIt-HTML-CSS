@@ -1,0 +1,516 @@
+/* Defaults */
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  background-color: #e9f0fd;
+}
+
+.container {
+  width: 1110px;
+  margin: 0 auto;
+}
+
+/* Header */
+
+.header {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.site-logo-box {
+  float: left;
+}
+
+.site-logo {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+}
+
+.site-logo::first-letter {
+  color: #22bd9e;
+  font-weight: 900;
+}
+
+.site-logo-link {
+  font-size: 30px;
+  display: block;
+  font-weight: 300;
+  text-decoration: none;
+  line-height: 32px;
+  color: #555252;
+  animation-name: logoMoving;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+.site-logo-link:hover {
+  /* transform: scale(1.3); */
+  color: #1abc9c;
+}
+
+.site-logo-box:hover .site-logo::first-letter {
+  transition-property: color;
+  transition-duration: 3s;
+  color: #555252;
+}
+
+@keyframes logoMoving {
+  0 {
+  }
+  50% {
+    transform: translateX(600%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.main-menu {
+  margin: 0;
+  padding: 0;
+  float: right;
+  list-style-type: none;
+}
+
+.menu-item {
+  float: left;
+  position: relative;
+  transition-property: transform;
+  transition-duration: 1s;
+}
+
+.menu-link {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  position: relative;
+  font-size: 14px;
+  line-height: 17px;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #0f0101;
+}
+
+.menu-link:hover,
+.menu-link:focus {
+  color: #1abc9c;
+}
+
+.menu-item:nth-child(even):hover {
+  color: #1abc9c;
+  transform: translateY(-3px);
+}
+
+.menu-item:nth-child(odd):hover {
+  color: #1abc9c;
+  transform: translateY(3px);
+}
+
+.menu-item:nth-child(even):hover .menu-link::after {
+  content: "";
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 20px;
+  height: 3px;
+  margin: 0 auto;
+  background-color: #ffdf00;
+}
+
+.menu-item:nth-child(odd):hover .menu-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: 20px;
+  height: 3px;
+  margin: 0 auto;
+  background-color: #ffdf00;
+}
+
+/* Main */
+/* Background */
+
+.paris-tours-section {
+  position: relative;
+  height: 600px;
+  background: url(../images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(0, 0, 2, 0.5);
+  background-blend-mode: multiply;
+  position: relative;
+}
+
+.paris-tours-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.paris-tours-section__button {
+  position: absolute;
+  border: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 104px;
+  height: 104px;
+  background-color: #54a18f;
+  cursor: pointer;
+}
+
+.button-left {
+  background-image: url(../images/slider/button-left.png);
+  left: 0;
+}
+
+.button-right {
+  background-image: url(../images/slider/button-right.png);
+  right: 0;
+}
+
+/* .paris-tours-wrapper::after,
+.paris-tours-wrapper::before {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  border: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 104px;
+  height: 104px;
+  background-color: #54a18f;
+  cursor: pointer;
+} */
+
+/* .paris-tours-wrapper::before {
+  content: "";
+  background-image: url(../images/slider/button-left.png);
+  left: 0;
+}
+
+.paris-tours-wrapper::after {
+  content: "";
+  background-image: url(../images/slider/button-right.png);
+  right: 0;
+} */
+
+.paris-tours-title,
+.paris-tours-subtitle {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+}
+
+.paris-tours-title {
+  font-size: 60px;
+  font-weight: 900;
+  margin-bottom: 14px;
+}
+
+.paris-tours-subtitle {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+/* Section - Collection */
+
+.collection-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.collection-title {
+  font-size: 48px;
+  line-height: 58px;
+  color: #515151;
+  margin: 0;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.collection-title::after {
+  content: "";
+  display: block;
+  width: 160px;
+  height: 7px;
+  margin: 0 auto;
+  margin-top: 28px;
+  background-color: #1abc9c;
+}
+
+.collection-menu {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.collection-item {
+  float: left;
+  width: 255px;
+  position: relative;
+  transition-property: transform;
+  transition-duration: 1s;
+}
+
+.collection-item:not(:nth-child(4n)) {
+  margin-right: 30px;
+}
+
+.item-desc-box {
+  font-size: 18px;
+  line-height: 32px;
+  color: #ffffff;
+  position: absolute;
+  bottom: 0;
+}
+
+.item-name {
+  float: left;
+  margin: 0;
+  padding: 5px 10px;
+  background-color: #323232;
+  width: 200px;
+  height: 40px;
+}
+
+.item-price {
+  margin: 0;
+  padding: 5px;
+  height: 40px;
+  float: right;
+  width: 55px;
+  background-color: #8c8c8c;
+  text-align: center;
+}
+
+.item-price::before {
+  content: "\0024";
+}
+
+/* Overlay */
+
+.overlay-wrapper {
+  width: 254px;
+  position: absolute;
+  height: 282px;
+  padding: 10px;
+}
+
+.overlay {
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: opacity 1s;
+}
+
+.overlay-menu {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  list-style-type: none;
+}
+
+.overlay-item {
+  float: left;
+}
+
+.overlay-like {
+  background: url(../images/overlay/overlay-like.png);
+}
+
+.overlay-compare {
+  background: url(../images/overlay/overlay-compare.png);
+}
+
+.overlay-later {
+  background: url(../images/overlay/overlay-later.png);
+}
+
+.overlay-button {
+  display: block;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border: 1px solid rgb(255, 255, 255);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.overlay-item:not(:nth-last-child(-n + 2)) {
+  margin-right: 8px;
+}
+
+.overlay-item:not(:nth-child(4)) {
+  margin-bottom: 6px;
+}
+
+.overlay-cart {
+  text-transform: uppercase;
+  background: url(../images/overlay/overlay-cart.png);
+  background-repeat: no-repeat;
+  background-position: 3.66% center;
+  width: 166px;
+  height: 50px;
+  border: 1px solid #fff;
+  background-color: #323232;
+  color: #fff;
+  padding-left: 30px;
+}
+/* Hovers */
+/* 
+.collection-item:hover .overlay {
+  opacity: 1;
+} */
+
+/* @keyframes opacityOverlayHover {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* @keyframes bgSliderShadow {
+  from {
+    box-shadow: none
+  }
+  to {
+    box-shadow: 0px 0px 27px 3px rgba(0,0,0,0.75);
+  }
+} */
+
+.slider-background-box:hover {
+  /* animation-name: bgSliderShadow;
+  animation-duration: 1s; */
+  box-shadow: 0px 3px 26px 10px rgba(158, 64, 184, 1);
+}
+
+.collection-item:nth-child(even) {
+  transform-origin: 0 0;
+  transform: rotate(0deg);
+}
+
+.collection-item:nth-child(even):hover {
+  transform-origin: 0 0;
+  transform: rotate(-2deg);
+}
+
+.collection-item:nth-child(odd) {
+  transform-origin: 100 100;
+  transform: rotate(0deg);
+}
+
+.collection-item:nth-child(odd):hover {
+  transform-origin: 100 100;
+  transform: rotate(3deg);
+}
+
+.collection-item:hover .overlay {
+  /* animation-name: opacityOverlayHover;
+  animation-duration: 2s; */
+  transition: opacity 1s;
+  opacity: 1;
+}
+
+.collection-item:hover .item-name {
+  background-color: #1abc9c;
+}
+
+.collection-item:hover .item-price {
+  background-color: #7fd9c7;
+}
+
+.overlay-button:hover {
+  transition: background-color 1s;
+  border: none;
+  background-color: #1abc9c;
+}
+
+/* Footer */
+
+.footer {
+  background-color: #323232;
+  padding: 34px 0;
+}
+
+.copyright {
+  margin: 0;
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 16px;
+  color: #fefefe;
+  font-family: "Open Sans", sans-serif;
+}
+
+.symbols::before {
+  content: "\00A9";
+}
+
+.symbols::after {
+  content: "\007C";
+}
+
+.footer-green {
+  color: #46bfa9;
+  text-decoration: none;
+}
